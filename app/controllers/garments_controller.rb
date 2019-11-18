@@ -1,7 +1,7 @@
-class GarmentController < ApplicationController
+class GarmentsController < ApplicationController
 
   def index
-    @garment = Garment.all
+    @garments = Garment.all
   end
 
   def show
@@ -19,6 +19,7 @@ class GarmentController < ApplicationController
     else
       render :new
     end
+  end
 
   def destroy
     @garment = Garment.delete
@@ -27,4 +28,5 @@ class GarmentController < ApplicationController
   def garment_params
     params.require(:garment).permit(:daily_price, :description, :location, :title)
   end
+
 end

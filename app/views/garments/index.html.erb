@@ -1,0 +1,7 @@
+<h1>List of Clothes</h1>
+  <% @garments.each do |garment| %>
+<h2><%= garment.title %> </h2>
+  <% end %>
+
+<%= link_to "Create Garment", garments_path(@garments_id) %>
+
