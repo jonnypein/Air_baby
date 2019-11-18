@@ -7,4 +7,14 @@ before_action :configure_permitted_parameters, if: :devise_controller?
     devise_parameter_sanitizer.permit(:account_update, keys: [:username])
   end
 
+  def show
+  end
+
+  def index
+  end
+
+  def destroy
+    @user.delete
+  end
+
 end
