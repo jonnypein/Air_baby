@@ -1,7 +1,9 @@
 <h1>List of Clothes</h1>
   <% @garments.each do |garment| %>
-<h2><%= garment.title %> </h2>
-  <% end %>
+<h2><%= link_to garment.title, garment_path(garment) %> </h2>
 
-<%= link_to "Create Garment", garments_path(@garments_id) %>
 
+<%= link_to "delete Garment", garment_path(garment), method: :delete %>
+
+
+<% end %>
