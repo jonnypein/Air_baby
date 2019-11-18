@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :users
-  resources :garments
+  resources :garments do
+    resources :bookings, only: [:new, :create, :destroy]
+  end
+  root to: 'garments#index'
 end

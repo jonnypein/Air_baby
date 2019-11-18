@@ -1,4 +1,4 @@
-class BookingController < ApplicationController
+class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
@@ -31,7 +31,6 @@ class BookingController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:check_in_date, :check_out_date, :total_amount)
-
   end
 
 end
