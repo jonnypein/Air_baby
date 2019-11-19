@@ -1,6 +1,6 @@
-<h1>Add booking</h1>
-<%= simple_form_for [@garment, @booking] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.submit %>
- <% end %>
+
+<%= simple_form_for ([@garment, @booking]) do |f| %>
+      <%= f.input :start_date, placeholder: "What date would you like to rent from "%>
+      <%= f.input :end_date, placeholder: "What date would you like to return from" %>
+      <%= f.button :submit %>
+      <% end %>

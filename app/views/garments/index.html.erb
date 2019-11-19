@@ -1,4 +1,5 @@
 <h1>List of Clothes</h1>
+
 <div class="container">
 
 <%= link_to "Create Garment", new_garment_path, class: "btn btn-primary" %>
@@ -9,10 +10,16 @@
     <h2><%= link_to garment.title, garment_path(garment) %> </h2>
     <p><%= garment.location %></p>
     <p><%= garment.daily_price %>£/week</p>
+    
+    <% if policy(garment).edit? %>
     <%= link_to "delete Garment", garment_path(garment), method: :delete %>
-    <%= link_to "Book Garment", new_garment_booking_path(garment), class: "btn btn-primary" %>
-</p>
+    <% end %>
+
+    <% if policy(garment).destroy? %>
+    <%= link_to "Edit Garment", edit_garment_path(garment) %>
+    <% end %>
+
+  <%= link_to "Book Garment", new_garment_booking_path(garment), class: "btn btn-primary" %>
+  </p>
   <% end %>
-
-
 </div>
