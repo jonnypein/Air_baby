@@ -1,5 +1,4 @@
 class BookingsController < ApplicationController
-
   def index
     @bookings = Booking.all
   end
@@ -9,15 +8,19 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @garment = Garment.find(params[:garment_id])
     @booking = Booking.new
-    @garment = Booking.find(params[:garment_id])
+    # @booking.garment = @garment
+    # @booking.user = current_user
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.garment = Garment.find(params[:garment_id])
+    @booking.user = current_user
+    @garment = Garment.find(params[:garment_id])
+    @booking.garment = @garment
     if @booking.save
-      redirect_to garment_path(Garment.find(params[:garment_id]))
+      redirect_to garment_path(@garment)
     else
       render :new
     end
@@ -25,12 +28,12 @@ class BookingsController < ApplicationController
 
   def destroy
     booking = Booking.find(params[:id])
-    booking.delete
+    booking.destroy
     redirect_to bookings_path
   end
 
   def booking_params
-    params.require(:booking).permit(:check_in_date, :check_out_date, :total_amount)
+    params.require(:booking).permit(:start_date, :end_date, :total_amount)
   end
 
 end

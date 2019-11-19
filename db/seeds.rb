@@ -41,3 +41,10 @@ user7 = User.create(email: "user7@test.com", password: "123456")
 Garment.create(title: "skirt", user: user7, location: "hoxton", description: "perfect state blue shorts suitable for 12 month.", daily_price: 2)
 Garment.create(title: "hat", user: user7, location: "hoxton", description: "Summer hat suitable for 12 month.", daily_price: 1.5)
 Garment.create(title: "sneakers", user: user7, location: "hoxton", description: "nice sneakers suitable for 12 month.", daily_price: 4)
+
+
+
+
+
+
+
