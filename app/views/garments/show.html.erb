@@ -1,0 +1,7 @@
+<h1><%= @garment.title %></h1>
+<%= link_to "Create Garment", new_garment_booking_path(@garment), class: "btn btn-primary" %>
+
+<%= link_to "Hompage", garments_path %>
+<%= link_to "delete Garment", garment_path(@garment), method: :delete %>
+
+

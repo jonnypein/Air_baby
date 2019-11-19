@@ -1,5 +1,3 @@
-
-
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1492725764893-90b379c2b6e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80);">
   <div class="container">
     <h1>Stop <strong>wasting</strong> money on baby clothes <strong>!</h1>
@@ -20,16 +18,17 @@
       <div class="card-trip">
       <img src="https://images.unsplash.com/photo-1563722205706-e8513b7554bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" width="200" height="100" />
       <div class="card-trip-infos">
-      <h2><%= garment.title %></h2>
+      <h2><%= link_to garment.title, garment_path(garment) %></h2>
       <p><%= garment.location %></p>
       <li class="card-trip-pricing"><%= garment.daily_price %>£/week</li>
-      </ul>
+        </ul>
+        <% if policy(garment).edit? %>
+          <%= link_to "delete Garment", garment_path(garment), method: :delete %>
+       <% end %>
+       <% if policy(garment).destroy? %>
+         <%= link_to "Edit Garment", edit_garment_path(garment) %>
       <% end %>
+     <%= link_to "Book Garment", new_garment_booking_path(garment), class: "btn btn-primary" %>
+     <% end %>
     </div>
 </div>
-
-
-
-
-<%= link_to "Update a clothe for rent", garments_path(@garments_id) %>
-
