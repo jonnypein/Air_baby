@@ -1,28 +1,36 @@
 
+.cards {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 40px;
+}
+
 .container .cards {
   display: flex;
   flex-direction: column;
   padding-botom: 400px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 15px;
+
 }
 
 li {
   list-style: none;
 }
 
-
 .card-trip {
+  position: relative;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 20px;
-
+  border-radius: 0.5px;
+  width: 247px;
 }
 
 .card-trip > img {
-  height: 200px;
+  height: 100%;
   width: 100%;
   object-fit: cover;
 }
@@ -42,10 +50,8 @@ li {
 
 .card-trip .card-trip-infos {
   padding: 16px;
-  display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
+  align-items: stretch;
 }
 
 .card-trip-infos .card-trip-user {
@@ -56,5 +62,32 @@ li {
 }
 
 h1 {
-  margin-left: 200px;
+  margin-left: 80px;
 }
+
+.garment-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: 140px;
+  width: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
