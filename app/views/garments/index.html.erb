@@ -1,12 +1,14 @@
-
 <h1>List of Clothes</h1>
 <div class="container">
     <% @garments.each do |garment| %>
  <a href="#"><img src="https://images.unsplash.com/photo-1563722205706-e8513b7554bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" width="200" height="100" /></a>
-  <h2><%= garment.title %> </h2>
+  <h2><%= garment.title, garment_path(garment) %> </h2>
   <p><%= garment.location %></p>
   <p><%= garment.daily_price %>£/week</p>
     <% end %>
 </div>
 <%= link_to "Create Garment", garments_path(@garments_id) %>
+<%= link_to "delete Garment", garment_path(garment), method: :delete %>
 
+
+<% end %>
