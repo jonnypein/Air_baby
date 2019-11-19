@@ -17,6 +17,7 @@ gem 'webpacker'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+  gem 'cloudinary', '~> 1.12.0'
 end
 
 group :development, :test do
@@ -27,3 +28,4 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
 end
+
