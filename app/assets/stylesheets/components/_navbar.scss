@@ -1,5 +1,19 @@
+.navbar {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 100;
+}
+
+.main {
+  margin-top: 80px;
+}
+
 .search-form-control {
   width: 500px;
+  margin: 10px;
 }
 
 .search-form-control {
@@ -36,5 +50,6 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
 
 
