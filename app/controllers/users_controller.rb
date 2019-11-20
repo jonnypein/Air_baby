@@ -4,9 +4,9 @@ class UsersController < ApplicationController
     authorize @user
   end
 
-  def edit
-  end
+  # def edit
+  # end
 
-  def update
-  end
+  # def update
+  # end
 end
