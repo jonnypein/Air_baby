@@ -2,13 +2,26 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :garment
   validates :start_date, :end_date, presence: true
-  # validate :end_date_after_start_date
+  validate :end_date_after_start_date
+  validate :check_availability
 
-  # def end_date_after_start_date
-  #   if end_date.blank? || start_date.blank?
-  #     if end_date < start_date
-  #       errors.add(:end_date, "must be after the start date")
-  #     end
-  #   end
-  # end
+  def end_date_after_start_date
+    unless end_date.blank? || start_date.blank?
+      if end_date < start_date
+        errors.add(:end_date, "must be after the start date")
+      end
+    end
+  end
+
+   def check_availability
+    bookings = Booking.where(["garment_id =?", garment_id])
+    date_ranges = bookings.map { |b| b.start_date..b.end_date }
+
+    date_ranges.each do |range|
+      if range.include?(start_date..end_date)
+        errors.add(:start_date, "not available")
+        errors.add(:end_date, "not available")
+      end
+    end
+  end
 end
