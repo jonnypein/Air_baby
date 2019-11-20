@@ -17,7 +17,6 @@
    <p class="garment-">£<%= @garment.daily_price %>/day</p>
    <p><i class="fas fa-comment"></i> <%= @garment.description %></p>
    <p><i class="fas fa-map-marker-alt", style="font-size:20px;"></i> <%= @garment.location.capitalize %></p>
-  <!--  <a href="#" style="margin-top: 80px;" class="btn btn-primary">Book now</a> -->
 
    <p></i> <%= link_to "Book now", new_garment_booking_path(@garment), class: 'btn btn-primary' %></p>
   </div>
