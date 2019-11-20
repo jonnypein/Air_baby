@@ -5,4 +5,6 @@ Rails.application.routes.draw do
     resources :bookings, only: [:index, :new, :create, :destroy]
   end
   root to: 'garments#index'
+
+  resources :users, only:[:show, :edit, :update]
 end
