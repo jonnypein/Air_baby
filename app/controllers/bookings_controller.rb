@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
+    @bookings = policy_scope(Booking)
+
   end
 
   def show
@@ -10,6 +11,7 @@ class BookingsController < ApplicationController
   def new
     @garment = Garment.find(params[:garment_id])
     @booking = Booking.new
+    authorize @booking
     # @booking.garment = @garment
     # @booking.user = current_user
   end
@@ -19,6 +21,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @garment = Garment.find(params[:garment_id])
     @booking.garment = @garment
+    authorize @booking
     if @booking.save
       redirect_to garment_path(@garment)
     else
@@ -27,8 +30,9 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    booking = Booking.find(params[:id])
-    booking.destroy
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.destroy
     redirect_to bookings_path
   end
 

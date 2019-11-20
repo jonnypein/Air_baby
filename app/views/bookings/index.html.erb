@@ -1,9 +1,9 @@
 <h1>List of all bookings</h1>
 
-<% @booking.each do |booking| %>
-<% booking.start_date %>
-<% booking.end_date %>
-<% booking.garment %>
-
+<% @bookings.each do |booking| %>
+<h2><%= booking.garment.title %> </h2>
+<p>Your Booking Start Date is <%= booking.start_date %></p>
+<p>Your Booking End Date is <%= booking.end_date %></p>
+<%= link_to 'Delete Booking', booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' }  %>
 <% end %>
 
