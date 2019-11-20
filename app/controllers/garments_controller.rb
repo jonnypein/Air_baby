@@ -37,7 +37,7 @@ class GarmentsController < ApplicationController
     @garment.user = current_user
     authorize @garment
     if @garment.save
-      redirect_to garment_path(@garment)
+      redirect_to profile_path
     else
       render :new
     end

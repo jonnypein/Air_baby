@@ -7,8 +7,7 @@ Rails.application.routes.draw do
 
   # get 'bookings', to: 'bookings#index'
   resources :bookings
+  get 'profile', to: 'pages#profile'
 
   root to: 'garments#index'
-
-  resources :users, only:[:show, :edit, :update]
 end

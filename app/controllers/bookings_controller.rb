@@ -23,7 +23,7 @@ class BookingsController < ApplicationController
     @booking.garment = @garment
     authorize @booking
     if @booking.save
-      redirect_to garment_path(@garment)
+      redirect_to bookings_path
     else
       render :new
     end
