@@ -1,4 +1,9 @@
 <h1><%= @garment.title %></h1>
+<%= @garment.description %>
+<%= @garment.location %>
+
+
+
 <%= link_to "Book this item!", new_garment_booking_path(@garment), class: "btn btn-primary" %>
 
 
