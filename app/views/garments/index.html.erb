@@ -8,7 +8,7 @@
 
 <br>
 <br>
-<h1>List of Clothes</h1>
+<h1>What do you need?</h1>
   <div class="container">
     <div class="cards">
       <% @garments.each do |garment| %>
@@ -25,10 +25,8 @@
 
         </ul>
         <% if policy(garment).edit? %>
-          <%= link_to "delete Garment", garment_path(garment), method: :delete %>
        <% end %>
        <% if policy(garment).destroy? %>
-         <%= link_to "Edit Garment", edit_garment_path(garment) %>
 
       <% end %>
      <% end %>
