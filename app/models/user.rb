@@ -6,4 +6,6 @@ class User < ApplicationRecord
   has_many :garments
   has_many :bookings
   has_many :booked_garments, through: :bookings, source: :garment
+  validates :name, presence: true
+  validates :location, presence: true
 end
