@@ -1,3 +1,12 @@
+
 // Import page-specific CSS files here.
 @import "home";
 @import "show";
+
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
