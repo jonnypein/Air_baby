@@ -15,6 +15,7 @@ Garment.create(title: "top", user: user, location: "kensinghton", daily_price: 2
 Garment.create(title: "hat", user: user, location: "kensinghton", daily_price: 4)
 
 user2 = User.create(email: "user2@test.com", password: "123456", name: "John Smith", location: "Shoreditch")
+
 Garment.create(title: "skirt", user: user2, location: "hoxton", description: "perfect state blue shorts suitable for 12 month.", daily_price: 2)
 Garment.create(title: "hat", user: user2, location: "hoxton", description: "Summer hat suitable for 12 month.", daily_price: 1.5)
 Garment.create(title: "sneakers", user: user2, location: "hoxton", description: "nice sneakers suitable for 12 month.", daily_price: 4)
