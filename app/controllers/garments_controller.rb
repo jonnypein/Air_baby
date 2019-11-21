@@ -2,12 +2,20 @@ class GarmentsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @garments = policy_scope(Garment)
-
   end
 
   def show
     @garment = Garment.find(params[:id])
     authorize @garment
+    @garment = Garment.geocoded.find(params[:id])
+
+    @markers =
+      [{
+        lat: @garment.latitude,
+        lng: @garment.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { garment: @garment })
+        # image_url: helpers.asset_url('')
+      }]
   end
 
   def new
@@ -51,6 +59,6 @@ class GarmentsController < ApplicationController
   end
 
   def garment_params
-    params.require(:garment).permit(:daily_price, :description, :location, :title, :photo)
+    params.require(:garment).permit(:daily_price, :description, :location, :title, photos: [])
   end
 end
