@@ -15,8 +15,13 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'pundit'
+
+gem 'geocoder'
+
+
 gem 'cloudinary', '~> 1.12.0'
 gem 'pg_search'
+
 
 
 group :development do
