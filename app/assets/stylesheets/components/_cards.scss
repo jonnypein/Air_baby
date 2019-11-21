@@ -6,6 +6,8 @@
   margin: 40px;
 }
 
+
+
 .container .cards {
   display: flex;
   flex-direction: column;
@@ -27,6 +29,13 @@ li {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 0.5px;
   width: 247px;
+}
+
+.card-trip:hover {
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+  transform: scale(1.05) !important;
+  transition: -ms-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, -webkit-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s !important;
+
 }
 
 .card-trip > img {
