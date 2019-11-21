@@ -9,4 +9,6 @@ class User < ApplicationRecord
   # validates :name, presence: true
   # validates :location, presence: true
   has_one_attached :avatar
+  include PgSearch::Model
+  multisearchable against: [:name]
 end

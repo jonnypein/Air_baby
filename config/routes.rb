@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get 'profile', to: 'pages#profile'
 
   root to: 'garments#index'
+
 end

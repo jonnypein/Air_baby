@@ -1,0 +1,12 @@
+<% results.each do |result| %>
+<% if result.searchable_type == 'Garment' %>
+  <%= garment = result.searchable %>
+  <div>
+    <h2><%= garment.title %> </h2>
+    <h3><%= garment.user.name %></h3>
+  </div>
+<%= else user = result.searchable %>
+  <div>
+    <h2> <%= user.name %> </h2>
+  </div>
+<%= end %>
