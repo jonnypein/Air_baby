@@ -1,7 +1,11 @@
 class GarmentsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @garments = policy_scope(Garment)
+    if params[:query].present?
+      @garments = policy_scope(Garment).search_by_title_and_location(params[:query])
+    else
+      @garments = policy_scope(Garment)
+  end
 
   end
 

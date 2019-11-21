@@ -15,12 +15,12 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'pundit'
-
+gem 'cloudinary', '~> 1.12.0'
+gem 'pg_search'
 
 
 group :development do
   gem 'web-console', '>= 3.3.0'
-  gem 'cloudinary', '~> 1.12.0'
 end
 
 group :development, :test do

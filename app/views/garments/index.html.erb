@@ -1,10 +1,12 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1492725764893-90b379c2b6e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80);">
-  <div class="container">
-    <h1>Stop <strong>wasting</strong> money on baby clothes <strong>!</h1>
-    <p> Your baby's wardrobre should grow as quickly as she/he is.</p>
-    <a class="btn btn-flat" href="#">Rent now</a>
+<% unless params[:query].present? %>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1492725764893-90b379c2b6e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80);">
+    <div class="container">
+      <h1>Stop <strong>wasting</strong> money on baby clothes <strong>!</h1>
+      <p> Your baby's wardrobre should grow as quickly as she/he is.</p>
+      <a class="btn btn-flat" href="#">Rent now</a>
+    </div>
   </div>
-</div>
+<% end %>
 
 <br>
 <br>
@@ -29,15 +31,12 @@
       <div class="card-trip-infos">
       <h2><%= link_to garment.title, garment_path(garment) %></h2>
       <p><%= garment.location %></p>
+
       <li class="card-trip-pricing"><%= garment.daily_price %>£/week</li>
       <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
 
         </ul>
-        <% if policy(garment).edit? %>
-       <% end %>
-       <% if policy(garment).destroy? %>
 
-      <% end %>
      <% end %>
     </div>
 </div>
