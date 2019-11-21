@@ -31,7 +31,16 @@
     <p><i class="fas fa-comment"></i> <%= @garment.description %></p>
     <p><i class="fas fa-map-marker-alt", style="font-size:20px;"></i> <%= @garment.location.capitalize %></p>
 
-    <p></i> <%= link_to "Book now", new_garment_booking_path(@garment), class: 'btn btn-primary' %></p>
+
+
+   <p></i> <%= link_to "Book now", new_garment_booking_path(@garment), class: 'btn btn-primary' %></p>
+    <% if policy(@garment).edit? %>
+          <%= link_to "Update", edit_garment_path(@garment)  %>
+    <% end %>
+    <% if policy(@garment).destroy? %>
+      <%= link_to "Delete", garment_path(@garment), method: :delete, data: { confirm: 'Are you sure?' }  %>
+    <% end %>
+
   </div>
 
 </div>

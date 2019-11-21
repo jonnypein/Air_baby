@@ -1,0 +1,52 @@
+#booking_title {
+  margin: 20px;
+}
+
+#hiden {
+    background-color: white;
+    position: absolute;
+    left: 370px;
+    top: 60px;
+    width: 160px;
+    height: 190px;
+}
+
+
+#booking_title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+}
+
+#in_red {
+
+  color: #97160d;
+}
+
+.description {
+  background-color: white;
+  position: absolute;
+  left: 46px;
+  top: 180px;
+  width: 560px;
+  height: 270px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+#booking_start_date_4i {
+   visibility: hidden;
+}
+
+#booking_start_date_5i {
+   visibility: hidden;
+}
+
+#booking_end_date_4i {
+   visibility: hidden;
+}
+
+#booking_end_date_5i {
+  visibility: hidden;
+}

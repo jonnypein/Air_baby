@@ -1,1 +1,19 @@
-_form.scss
+.simple_form div.input {
+  margin-bottom: 10px;
+  clear: both;
+}
+
+.description .simple_form label {
+  float: left;
+  width: 100px;
+  text-align: right;
+  margin: 2px 10px;
+}
+
+.form-login {
+  float: left;
+  width: 400px;
+  text-align: left;
+  margin: 2px 10px;
+}
+

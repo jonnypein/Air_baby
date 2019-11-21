@@ -1,20 +1,25 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
 
-<form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
-  <div class="search-form-control form-group">
-    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-    <button name="button" type="submit" class="btn btn-flat">
-      <i class="fas fa-search"></i> Search
-    </button>
+
+    <img src="https://res.cloudinary.com/dtjblav7i/image/upload/v1574345646/Capture_d_e%CC%81cran_2019-11-21_a%CC%80_14.13.51_rb9lf3.png" />
+  <% end %>
+
+
+<div class= "searchbox d-flex justify-content-between align-items-center">
+  <div class="searchbar">
+  <%= form_tag garments_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a item of clothing"%>
   </div>
-</form>
+    <div class="button">
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <%= submit_tag "Search", class: "btn btn-flat mr-2" %>
+    </div>
+  <% end %>
+</div>
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -29,8 +34,14 @@
         <li class="nav-item">
           <%= link_to "Messages", "#", class: "nav-link" %>
         </li>
-        <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <li class="nav-item dropdown" >
+         <% if current_user.avatar.attached? %>
+            <%= cl_image_tag current_user.avatar.key, height: 30, width: 30, crop: :fill, class: "avatar dropdown-toggle rounded", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% else %>
+            <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="navbar_avatar" src="data:image/png;base64,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 "/>
+        <% end %>
+
+
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Action", "#", class: "dropdown-item" %>
             <%= link_to "My bookings", bookings_path, class: "dropdown-item" %>

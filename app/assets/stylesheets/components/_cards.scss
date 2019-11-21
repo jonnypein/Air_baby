@@ -6,6 +6,8 @@
   margin: 40px;
 }
 
+
+
 .container .cards {
   display: flex;
   flex-direction: column;
@@ -27,6 +29,13 @@ li {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 0.5px;
   width: 247px;
+}
+
+.card-trip:hover {
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+  transform: scale(1.05) !important;
+  transition: -ms-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, -webkit-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s !important;
+
 }
 
 .card-trip > img {
@@ -81,6 +90,38 @@ li {
   width: 40px;
 }
 
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
 
 
 
