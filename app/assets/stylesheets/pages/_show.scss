@@ -1,33 +1,41 @@
 .top-garment-container {
    display: flex;
-   margin-top: 120px;
+   margin-top: 30px;
+   margin-bottom: 30px;
+   margin-left: 30px;
    font-size: 14px;
-   line-height: 1.43;
    color: #484848;
    background-color: #fff;
-   border-radius: 10px;
+   border-radius: 0px;
    text-align: center;
    font-family: "Roboto", sans-serif;
+   border: 2px solid grey;
 
 }
 
 .garment-image-container img {
-
   margin: 30px;
-  width: 500px;
-  height: 400px;
   border-radius: 10px;
 }
 
+.image-booking-container{
+  border: 2px solid blue;
+  margin: 20px;
+  flex: stretch;
+  object-fit: cover;
+}
+
+.image-booking-container .img{
+  border: 2px solid blue;
+}
+
 .information-container{
-
-  margin: 30px;
-  border-radius: 10px;
+  border: 2px solid red;
+  margin: 20px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-
-  width: 700px;
+  width: 400px;
+  height: 400px;
   background-color: #F2F2F2;
-
   box-sizing: border-box;
 
   h1 {
@@ -42,13 +50,12 @@
 }
 
 .booking-container {
-
   display: flex;
   justify-content: space-between;
   margin: 2vw 0;
   font-size: 30px;
   font-weight: bold;
-  border-radius: 10px;
+  border-radius: 0px;
   background-color: #F2F2F2;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
   padding: 3vw;
@@ -58,18 +65,25 @@
   min-width: 10vw;
 }
 
-.garment-name{
-
+.garment-name {
 font-family: 'Bebas Neue', cursive;
+font-size: 40px;
 }
 
-.garment-price {
-
-  font-size: 20px;
+.garment- {
+  font-size: 30px;
 }
+
+#garment_description {
+  font-size: 40px;
+}
+
 
 .btn-btn-primary-blue {
 
   text-align: bottom-left;
   margin: 16px;
 }
+
+
+
