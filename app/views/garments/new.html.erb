@@ -1,9 +1,20 @@
-<h1>Clothing</h1>
-<%= simple_form_for(@garment) do |f| %>
-<%= f.input :title %>
-<%= f.input :location %>
-<%= f.input :description %>
-<%= f.input :daily_price %>
-<%= f.input :photos, as: :file, input_html: { multiple: true } %>
-<%= f.submit %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Clothing</h1>
+    <%= simple_form_for(@garment) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :location %>
+    <%= f.input :description %>
+    <%= f.input :daily_price %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit %>
+    <% end %>
+
+    </div>
+  </div>
+
+
+</div>
+
+
