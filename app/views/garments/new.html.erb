@@ -1,20 +1,18 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <h1>Clothing</h1>
-    <%= simple_form_for(@garment) do |f| %>
-    <%= f.input :title %>
-    <%= f.input :location %>
-    <%= f.input :description %>
-    <%= f.input :daily_price %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.submit %>
-    <% end %>
 
+<div class="main">
+ <div class="banner_booking" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1540479859555-17af45c78602?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);">
+  <h1 id='title_new_garment'style="font-weight: 800; font-size: 33px; margin-left: 53px; color:white;">One More Step Towards Helping Others</h1>
+    <div class="createclothesform">
+      <div class="d-flex background">
+        <%= simple_form_for(@garment) do |f| %>
+        <div class="toppadding">
+          <%= f.input :title %>
+          <%= f.input :location %>
+          <%= f.input :description %>
+          <%= f.input :daily_price %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+          <button style="margin-left: 45px; margin-bottom: 20px" type="submit" class="btn btn-secondary">Submit</button>
+        <% end %>
+      </div>
     </div>
-  </div>
-
-
 </div>
-
-

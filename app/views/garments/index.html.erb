@@ -1,59 +1,57 @@
 <% unless params[:query].present? %>
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1492725764893-90b379c2b6e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80);">
-    <div class="container">
-      <h1>Stop <strong>wasting</strong> money on baby clothes <strong>!</h1>
-      <p> Your baby's wardrobre should grow as quickly as she/he is.</p>
-      <a class="btn btn-flat" href="#">Rent now</a>
-    </div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1492725764893-90b379c2b6e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80);">
+  <div class="container">
+    <h1>Stop <strong>wasting</strong> money on baby clothes!</h1>
+    <p> Your baby's wardrobre should grow as quickly as she/he is.</p>
+    <a class="btn btn-flat" href="#">Rent now</a>
   </div>
-<h1>What do you need?</h1>
+</div>
+<h1 class="text-center">What do you need?</h1>
 <% end %>
 
 <% if params[:query].present? %>
-<br>
-<br>
-<h1>Theses are the search results for <%= params[:query]%></h1>
+
+<h1 style="margin-left:74px";>Theses are the search results for "<%= params[:query]%>"</h1>
 <% end %>
-<br>
-<br>
 
 
 
-  <div class="container">
-    <div class="cards">
-      <% @garments.each do |garment| %>
-      <ul>
+<div class="container">
+  <div class="cards">
+    <% @garments.each do |garment| %>
+
       <div class="card-trip">
-       <%= link_to "", garment_path(garment), class:"garment-link"%>
-
+        <%= link_to "", garment_path(garment), class:"garment-link"%>
         <% if garment.photos.attached? %>
-
-              <%= cl_image_tag garment.photos.first.key, height: 300, width: 400, crop: :fill %>
-
-
-
+          <%= cl_image_tag garment.photos.first.key, height: 300, width: 400, crop: :fill %>
         <% else %>
           <img src="https://images.unsplash.com/photo-1541807243774-518bdde38627?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQi" />
         <% end %>
 
+        <div class="card-trip-infos">
+          <h2><%= link_to garment.title.capitalize, garment_path(garment) %></h2>
+          <p> <i class="fas fa-map-marker-alt"></i>  <%= garment.location.capitalize %></p>
+          <li class="card-trip-pricing"> <span style="font-size:20px, font-weight:bold";>£</span><%= garment.daily_price %>/<span style="font-size:12px;">week</span></li>
 
-      <div class="card-trip-infos">
-      <h2><%= link_to garment.title, garment_path(garment) %></h2>
-      <p><%= garment.location %></p>
-      <li class="card-trip-pricing"><%= garment.daily_price %>£/week</li>
-      <% if policy(garment).edit? %>
+          <% if policy(garment).edit? %>
+
             <% if current_user.avatar.attached? %>
               <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle card-trip-user avatar-bordered", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% else %>
-            <img src="data:image/png;base64,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 " class="card-trip-user avatar-bordered"/>
+              <img src="data:image/png;base64,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 " class="card-trip-user avatar-bordered"/>
             <% end %>
-      <% elsif garment.user.avatar.attached? %>
-        <%= cl_image_tag garment.user.avatar.key, class: "avatar dropdown-toggle card-trip-user avatar-bordered", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-      <% else %>
-        <img src="data:image/png;base64,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 " class="card-trip-user avatar-bordered"/>
-      <% end %>
-        </ul>
 
-     <% end %>
+          <% elsif garment.user.avatar.attached? %>
+            <%= cl_image_tag garment.user.avatar.key, class: "avatar dropdown-toggle card-trip-user avatar-bordered", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+
+          <% else %>
+            <img src="data:image/png;base64,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 " class="card-trip-user avatar-bordered"/>
+          <% end %>
+        </div>
+
+      </div>
+      <% end %>
     </div>
+  </div>
+
 </div>

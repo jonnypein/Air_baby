@@ -1,4 +1,7 @@
-#navbar_avatar{
-  height: 30px;
-  width: 30px;
-}
+.avatar{
+    width: 40px!important;
+    border-radius: 50%!important;
+    margin-top: 5px;
+    margin-left: 4px;
+    object-fit: cover;
+  }

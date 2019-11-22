@@ -1,20 +1,12 @@
 
+
+
+
 .cards {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 40px;
-}
-
-
-
-.container .cards {
-  display: flex;
-  flex-direction: column;
-  padding-botom: 400px;
+  padding-bottom: 400px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 15px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 24px;
 
 }
 
@@ -27,33 +19,38 @@ li {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 0.5px;
-  width: 247px;
+  border-radius: 5px;
+  a {
+    color: black;
+    text-decoration: none;
+    background-color: transparent;
+  }
 }
 
 .card-trip:hover {
   box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
-  transform: scale(1.05) !important;
+  transform: scale(1.05) rotate(1080deg) !important;
   transition: -ms-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, -webkit-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s !important;
-
 }
 
 .card-trip > img {
-  height: 100%;
+  height: 250px;
   width: 100%;
   object-fit: cover;
 }
 
 .card-trip h2 {
-  font-size: 16px;
+  font-size: 22px;
   font-weight: bold;
   margin: 0;
+  color: black;
 }
 
 .card-trip p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
+
 }
 
 
@@ -83,10 +80,12 @@ li {
   z-index: 100;
 }
 
+
+
 .card-trip-infos .card-trip-user {
   position: absolute;
   right: 16px;
-  top: 140px;
+  top: 224px;
   width: 40px;
 }
 
@@ -125,10 +124,37 @@ li {
 
 
 
+.topofcard{
+border:1px solid #DDDDDD;
+border-left:1px solid #DDDDDD;
+border-right:1px solid #DDDDDD;
+border-radius: 2px;
+background-color: #F6F6F6;
+padding:9px;
+}
 
 
 
 
 
 
+.information-container{
+  h1{
+    font-size: 26px;
+    font-weight: 600px;
+    color:black;
+  }
+  p{
+    font-size: 16px;
+    color:black;
+  }
+}
+
+.showpagebutton{
+  margin-right: 281px;
+  a{
+  color: white;
+
+  }
+}
 

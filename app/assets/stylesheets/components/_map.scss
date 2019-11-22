@@ -6,3 +6,17 @@
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
+
+.container .map {
+  margin: 300px;
+}
+
+.mapboxgl-canvas {
+  padding: 10px 10px 10px 10px;
+  height: 485px;
+
+}
+
+.super_div {
+  display: flex;
+}
