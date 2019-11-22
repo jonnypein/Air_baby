@@ -1,15 +1,16 @@
 .top-garment-container {
-   display: flex;
-   margin-top: 30px;
-   margin-bottom: 30px;
-   margin-left: 30px;
-   font-size: 14px;
-   color: #484848;
-   background-color: #fff;
-   border-radius: 0px;
-   text-align: center;
-   font-family: "Roboto", sans-serif;
-   border: 2px solid grey;
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  font-size: 14px;
+  color: #484848;
+  background-color: #fff;
+  border-radius: 0px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  height: 500px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 
 }
 
@@ -19,7 +20,6 @@
 }
 
 .image-booking-container{
-  border: 2px solid blue;
   margin: 20px;
   flex: stretch;
   object-fit: cover;
@@ -30,11 +30,10 @@
 }
 
 .information-container{
-  border: 2px solid red;
   margin: 20px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
   width: 400px;
-  height: 400px;
+  height: 300px;
   background-color: #F2F2F2;
   box-sizing: border-box;
 
@@ -71,11 +70,11 @@ font-size: 40px;
 }
 
 .garment- {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 #garment_description {
-  font-size: 40px;
+  font-size: 20px;
 }
 
 
@@ -85,5 +84,6 @@ font-size: 40px;
   margin: 16px;
 }
 
-
-
+.carouselExampleControls {
+  border: 1px solid grey;
+}

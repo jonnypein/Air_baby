@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to garments_path, class: "navbar-brand" do %>
 <%= image_tag "airbaby.png" %>
   <% end %>
 
@@ -26,9 +26,6 @@
        <li class="nav-item d-flex align-items-center">
           <%= link_to "Upload your baby clothes", new_garment_path, class: "nav-link" %>
         </li>
-        <li class="nav-item active">
-          <%= link_to "Home", garments_path, class: "nav-link" %>
-        </li>
         <li class="nav-item dropdown" >
          <% if current_user.avatar.attached? %>
             <%= cl_image_tag current_user.avatar.key, height: 30, width: 30, crop: :fill, class: "avatar dropdown-toggle rounded", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -53,3 +50,5 @@
     </ul>
   </div>
 </div>
+
+
