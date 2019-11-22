@@ -1,4 +1,4 @@
-
+<div class="main">
 <div class="super_div">
   <div class="container top-garment-container">
     <div class="image-booking-container">
@@ -7,9 +7,7 @@
 
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="false">
         <div class="carousel-inner">
-
             <% @garment.photos.each_with_index do |photo, i| %>
-
               <div class="carousel-item <%= i == 0 ? 'active' : '' %>">
                 <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
               </div>
@@ -26,24 +24,24 @@
       </div>
     </div>
 
+
   <div class="information-container">
-      <h1 class="garment-name"><%= @garment.title.capitalize %></h1>
-      <p class="garment-">£<%= @garment.daily_price %>/day</p>
-      <ul>
-        <li><p id='garment_descrion'><i class="fas fa-comment"></i> <%= @garment.description %></p></li>
-        <li><p><i class="fas fa-map-marker-alt", style="font-size:20px;"></i> <%= @garment.location.capitalize %></p></li>
-      </ul>
-
-
-     <p></i> <%= link_to "Book now", new_garment_booking_path(@garment), class: 'btn btn-primary' %></p>
+     <div id="container_item">
+        <h1 class="garment-name"><%= @garment.title.capitalize %></h1>
+        <ul>
+          <li><p class="garment-">£<%= @garment.daily_price %>/day</p></li>
+          <li><p id='garment_descrion'><%= @garment.description %></p></li>
+          <li><p><i class="fas fa-map-marker-alt", style="font-size:20px;"></i> <%= @garment.location.capitalize %></p></li>
+        </ul>
+        <button class="btn btn-primary"><%= link_to "Book now", new_garment_booking_path(@garment) %></button>
       <% if policy(@garment).edit? %>
             <%= link_to "Update", edit_garment_path(@garment)  %>
       <% end %>
       <% if policy(@garment).destroy? %>
         <%= link_to "Delete", garment_path(@garment), method: :delete, data: { confirm: 'Are you sure?' }  %>
       <% end %>
-
     </div>
+  </div>
 
   </div>
 
@@ -57,6 +55,6 @@
     ></div>
   </div>
 </div>
-
+</div>
 
 
