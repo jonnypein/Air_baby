@@ -156,6 +156,7 @@ border-left:1px solid #DDDDDD;
 border-right:1px solid #DDDDDD;
 border-radius: 2px;
 background-color: #F6F6F6;
+padding:9px;
 
 }
 
@@ -168,4 +169,22 @@ background-color: #F6F6F6;
 }
 
 
+.information-container{
+  h1{
+    font-size: 26px;
+    font-weight: 600px;
+    color:black;
+  }
+  p{
+    font-size: 16px;
+    color:black;
+  }
+}
+
+.showpagebutton{
+  margin-right: 187px;
+  a{
+  color: white;
+  }
+}
 
