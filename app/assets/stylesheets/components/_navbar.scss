@@ -4,7 +4,6 @@
   z-index: 9999;
 }
 
-
 .navbar {
   overflow: visible;
   top: 0;
@@ -12,7 +11,12 @@
   height: 80px;
   z-index: 10;
 }
-
+.carousel-control-next-icon {
+  background-image: url("https://res.cloudinary.com/dtjblav7i/image/upload/v1574438670/chevron-right_a5dmz2.png") !important;
+}
+.carousel-control-prev-icon {
+  background-image: url("https://res.cloudinary.com/dtjblav7i/image/upload/v1574438659/chevron-left_mskm47.png") !important;
+}
 .search-form-control {
   width: 500px;
   margin: 10px;
