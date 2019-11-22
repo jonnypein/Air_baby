@@ -96,24 +96,6 @@ li {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  width: 1012px;
-  position: relative;
-  margin-bottom: 16px;
-  border-bottom:1px solid #DDDDDD;
-  border-left:1px solid #DDDDDD;
-  border-right:1px solid #DDDDDD;
-  border-radius: 2px;
-
-  .reviewdelete{
-    position: absolute;
-    right: 35px;
-    top: 40px;
-    width: 204px
-  }
-  a {
-    color:black;
-  }
-
 }
 
 .card-product img {
@@ -129,7 +111,7 @@ li {
 }
 
 .card-product p {
-  font-size: 12px !important;
+  font-size: 12px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -141,6 +123,7 @@ li {
 }
 
 
+
 .topofcard{
 border:1px solid #DDDDDD;
 border-left:1px solid #DDDDDD;
@@ -148,16 +131,11 @@ border-right:1px solid #DDDDDD;
 border-radius: 2px;
 background-color: #F6F6F6;
 padding:9px;
-
 }
 
 
 
-.card-container {
-  width:1012px;
-  border-radius: 5px;
 
-}
 
 
 .information-container{
