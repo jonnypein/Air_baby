@@ -24,4 +24,9 @@ class Booking < ApplicationRecord
       end
     end
   end
+
+  def total_cost
+    return ((end_date - start_date).to_i / (60000)) * garment.daily_price
+  end
+
 end

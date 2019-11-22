@@ -1,23 +1,34 @@
 
 <br>
-<h1 id='title_id'>Your rented items</h1>
+<h1 id='title_id' style= "margin-left:184px">Your rented items</h1>
     <div id="container_bookings_product">
-      <% @bookings.each do |booking| %>
-      <div id="cards_booking_product">
-        <div class="card-product">
+    <div id="cards_booking_product">
 
+      <% @bookings.each do |booking| %>
+        <div class="card-container">
+          <div class="topofcard d-flex justify-content-between" style="align-items: center;">
+            <h6 style="font-size: 15px;margin: 0; color: #555555;">Item Rented on the <%= booking.start_date %> </h6>
+            <p style="margin: 0;color: #555555;">Total: £<%= booking.total_cost %></p>
+          </div>
+          <div class="card-product">
             <% if booking.garment.photos.attached? %>
               <%= cl_image_tag booking.garment.photos.first.key, height: 300, width: 400, crop: :fill %>
             <% else %>
               <img src="https://images.unsplash.com/photo-1541807243774-518bdde38627?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQi" />
             <% end %>
 
-          <div class="card-product-infos">
-            <h2 id='title_booking_big'><%= booking.garment.title.capitalize %></h2>
-            <p id='p_booking_big'>You need to return your item by the: <%= booking.end_date %></p>
-            <a class="btn btn-gradient" <%= link_to 'Delete Booking', booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' } %></a>
+            <div class="card-product-infos">
+              <h2 id='title_booking_big'>
+              <%= link_to garment_path(booking.garment), class: "linktogarment" do %>
+                <%= booking.garment.title.capitalize %></h2>
+              <% end %>
+              <p id='p_booking_big'>You need to return your item by the: <%= booking.end_date %></p>
+              <div class="reviewdelete d-flex flex-column-reverse">
+                <a class="btnbtn-gradient"> <%= link_to 'Delete Booking', booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' } %> </a>
+                <a class="btnbtn-gradient"> <%= link_to 'Write a Review', "#" %></a>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
       <% end %>
     </div>
