@@ -1,8 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "#", class: "navbar-brand" do %>
-
-
-    <img src="https://res.cloudinary.com/dtjblav7i/image/upload/v1574345646/Capture_d_e%CC%81cran_2019-11-21_a%CC%80_14.13.51_rb9lf3.png" />
+<%= image_tag "airbaby.png" %>
   <% end %>
 
 
@@ -25,7 +23,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-       <li class="nav-item">
+       <li class="nav-item d-flex align-items-center">
           <%= link_to "Upload your baby clothes", new_garment_path, class: "nav-link" %>
         </li>
         <li class="nav-item active">
