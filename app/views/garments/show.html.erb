@@ -29,8 +29,12 @@
      <div id="container_item">
       <div id="showpagecardinfo d-flex">
         <h1 class="garment-name"><%= @garment.title.capitalize %></h1>
-          <li><p class="garment-" style="font-weight: bold">£<%= @garment.daily_price %>/day</p></li>
+
+        <ul>
+          <li><p class="garment-">£<%= @garment.daily_price %>/day</p></li>
+          <div id="container_description">
           <li><p id='garment_descrion'><%= @garment.description %></p></li>
+          </div>
           <li><p><i class="fas fa-map-marker-alt", style="font-size:20px;"></i> <%= @garment.location.capitalize %></p></li>
       </div>
         <button class="btn btn-dark showpagebutton"><%= link_to "Book now", new_garment_booking_path(@garment) %></button>
