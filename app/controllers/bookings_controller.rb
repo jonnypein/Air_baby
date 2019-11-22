@@ -5,16 +5,20 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @booking = Booking.find(params[:id])
-  end
-
-  def new
+    # @booking = Booking.find(params[:id])
     @garment = Garment.find(params[:garment_id])
     @booking = Booking.new
     authorize @booking
-    # @booking.garment = @garment
-    # @booking.user = current_user
+
   end
+
+  # def new
+  #   @garment = Garment.find(params[:garment_id])
+  #   @booking = Booking.new
+  #   authorize @booking
+  #   # @booking.garment = @garment
+  #   # @booking.user = current_user
+  # end
 
   def create
     @booking = Booking.new(booking_params)

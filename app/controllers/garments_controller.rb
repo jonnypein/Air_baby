@@ -10,7 +10,6 @@ class GarmentsController < ApplicationController
       @garments = policy_scope(Garment)
   end
 
-
   end
 
   def show
@@ -22,9 +21,11 @@ class GarmentsController < ApplicationController
       [{
         lat: @garment.latitude,
         lng: @garment.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { garment: @garment })
-        # image_url: helpers.asset_url('')
+        infoWindow: render_to_string(partial: "info_window", locals: { garment: @garment }),
+        image_url: helpers.asset_url('garment_logo')
       }]
+
+      @booking = Booking.new
   end
 
   def new
