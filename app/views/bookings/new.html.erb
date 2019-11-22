@@ -1,26 +1,17 @@
-<div class="main">
 <style>
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 </style>
 
-<div class="banner_booking" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1519340241574-2cec6aef0c01?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1789&q=80);">
-  <div class='container'>
+<div class="banner_new_v2" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1519340241574-2cec6aef0c01?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1789&q=80);">
   <div class='booking form'>
-    <br>
-    <br>
-
-  <div class='description'>
-     <div class='container_description'>
+    <div class='description'>
       <p id="booking_title">You're just few <text style="color:#97160d; font-weight:bold;">clicks</text> away from renting this item!</p>
       <%= simple_form_for ([@garment, @booking]) do |f| %>
       <%= f.input :start_date, placeholder: "What date would you like to rent from "%>
       <p id='hiden'></p>
       <%= f.input :end_date, placeholder: "What date would you like to return from" %>
-      <%= f.button :submit, "Rent this item", class: "btn-flat" %></button>
+        <button style="margin-left: 80px; margin-bottom: 20px" type="submit" class="btn btn-secondary">Rent this item</button>
       <% end %>
-     </div>
+    </div>
   </div>
-  </div>
-</div>
-</div>
 </div>
