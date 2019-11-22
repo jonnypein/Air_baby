@@ -11,8 +11,13 @@ User.destroy_all
 
 
 
-user = User.create(email: "test@test.com", password: "123456", name: "Joe Bloggs", location: "Hoxton")
-Garment.create(title: "shorts", user: user, location: "kensinghton", daily_price: 3)
+user = User.create(email: "test333@test.com", password: "123456", name: "Joe Bloggs", location: "Hoxton")
+
+garment1 = Garment.create(title: "nicde shorts", user: User.first, location: "kensinghton", daily_price: 3)
+file = URI.open("https://res.cloudinary.com/dtjblav7i/image/upload/v1574434801/5017201J_nkltrs.jpg")
+garment1.photos.attach(io: file, filename: '1482613.jpg', content_type: 'image/jpg')
+garment1.save
+
 Garment.create(title: "top", user: user, location: "kensinghton", daily_price: 2.5)
 Garment.create(title: "hat", user: user, location: "kensinghton", daily_price: 4)
 
@@ -43,11 +48,12 @@ Garment.create(title: "sneakers", user: user6, location: "hoxton", description: 
 user7 = User.create(email: "user7@test.com", password: "123456", name: "Wonda Riddle", location: "Holborn")
 Garment.create(title: "skirt", user: user7, location: "hoxton", description: "perfect state blue shorts suitable for 12 month.", daily_price: 2)
 Garment.create(title: "hat", user: user7, location: "hoxton", description: "Summer hat suitable for 12 month.", daily_price: 1.5)
-Garment.create(title: "sneakers", user: user7, location: "hoxton", description: "nice sneakers suitable for 12 month.", daily_price: 4)
 
 
-
-
+garment = Garment.create(title: "sneakers", user: user7, location: "hoxton", description: "nice sneakers suitable for 12 month.", daily_price: 4)
+file = URI.open(asset_path("1482613.jpg"))
+garment.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
+garment.save
 
 
 
